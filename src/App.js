@@ -13,7 +13,7 @@ function App() {
     <Container className="phone-container d-flex flex-column justify-content-center align-items-center">
       <Row className="w-100">
         <Col xs={12} className="d-flex justify-content-center">
-          <Image src="path-to-profile-picture.jpg" roundedCircle />
+          <Image src="path_here"  roundedCircle />
         </Col>
       </Row>
 
@@ -27,8 +27,7 @@ function App() {
 
       <Row className="w-100 mt-3">
         <Col xs={12} className="text-center">
-          <Image src="path-to-company-logo.png" />
-          <p>Company Name</p>
+          <Image className="logo-image" src="corp_logo.png" />
         </Col>
       </Row>
 
