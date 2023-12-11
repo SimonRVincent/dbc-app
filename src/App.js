@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './App.css';
 import { Container, Row, Col, Image, Button, Card, Modal } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // other imports
@@ -55,7 +56,7 @@ function App() {
         <Col xs={12}>
           <Card>
             <Card.Body>
-              <Card.Title>Biography or Other Details</Card.Title>
+              <Card.Title>About Me</Card.Title>
               <Card.Text>
                 This is some text about the person or additional details they wish to include on their digital business card.
               </Card.Text>
