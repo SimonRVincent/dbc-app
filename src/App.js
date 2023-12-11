@@ -14,6 +14,45 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [showModal, setShowModal] = useState(false);
+  const [userData, setUserData] = useState({
+    name: "Name",
+    position: "Position",
+    email: "Email",
+    phone: "Phone #",
+    linkedIn: "https://linkedin.com/in/yourprofile",
+    github: "https://github.com/yourprofile",
+    twitter: "https://twitter.com/yourprofile",
+    aboutTitle: "About Me",
+    aboutBody: "This is some text about the person or additional details they wish to include on their digital business card."
+  });
+
+  useEffect(() => {
+    const queryParams = new URLSearchParams(window.location.search);
+    const name = queryParams.get('name');
+    const position = queryParams.get('position');
+    const email = queryParams.get('email');
+    const phone = queryParams.get('phone');
+    const linkedIn = queryParams.get('linkedIn');
+    const github = queryParams.get('github');
+    const twitter = queryParams.get('twitter');
+    const aboutTitle = queryParams.get('aboutTitle');
+    const aboutBody = queryParams.get('aboutBody');
+
+    if (name || position || email || phone) {
+      setUserData(prevData => ({
+        ...prevData,
+        name: name || prevData.name,
+        position: position || prevData.position,
+        email: email || prevData.email,
+        phone: phone || prevData.phone,
+        linkedIn: linkedIn || prevData.linkedIn,
+        github: github || prevData.github,
+        twitter: twitter || prevData.twitter,
+        aboutTitle: aboutTitle || prevData.aboutTitle,
+        aboutBody: aboutBody || prevData.aboutBody
+      }));
+    }
+  }, []);
 
   const handleClose = () => setShowModal(false);
   const handleShow = () => setShowModal(true);
@@ -28,9 +67,9 @@ function App() {
 
       <Row className="w-100 mt-3">
         <Col xs={12} className="text-center">
-          <h3 id="name">Name</h3>
-          <p id="position">Position</p>
-          <p id="emailPhone">Email | Phone #</p>
+          <h3 id="name">{userData.name}</h3>
+          <p id="position">{userData.position}</p>
+          <p id="emailPhone">{`${userData.email} | ${userData.phone}`}</p>
         </Col>
       </Row>
 
@@ -62,7 +101,7 @@ function App() {
           <Button
             id="linkedIn"
             variant="link"
-            href="https://linkedin.com/in/yourprofile"
+            href="{userData.linkedIn}"
             target="_blank"
           >
             LinkedIn
@@ -70,7 +109,7 @@ function App() {
           <Button
             id="github"
             variant="link"
-            href="https://github.com/yourprofile"
+            href="{userData.github}"
             target="_blank"
           >
             GitHub
@@ -78,7 +117,7 @@ function App() {
           <Button
             id="twitter"
             variant="link"
-            href="https://twitter.com/yourprofile"
+            href="{userData.twitter}"
             target="_blank"
           >
             Twitter
@@ -91,10 +130,9 @@ function App() {
         <Col xs={12}>
           <Card>
             <Card.Body>
-              <Card.Title id="aboutTitle">About Me</Card.Title>
+              <Card.Title id="aboutTitle">{userData.aboutTitle}</Card.Title>
               <Card.Text id="aboutBody">
-                This is some text about the person or additional details they
-                wish to include on their digital business card.
+                {userData.aboutBody}
               </Card.Text>
             </Card.Body>
           </Card>
