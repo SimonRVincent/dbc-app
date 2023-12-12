@@ -1,7 +1,7 @@
 import React from "react";
-import { QRCode } from "qrcode.react";
+import QRCode from "qrcode.react";
 
-function MyQRCodeComponent() {
+function QRCodeOne() {
   // Your data that you want to encode in the QR Code
   const data =
     "http://localhost:3000/?name=Placeholder+Name&position=Placeholder+Position&email=placeholder%40email.com&phone=1234567890&linkedIn=https%3A%2F%2Flinkedin.com%2Fin%2Fplaceholder&github=https%3A%2F%2Fgithub.com%2Fplaceholder&twitter=https%3A%2F%2Ftwitter.com%2Fplaceholder&aboutTitle=About+Placeholder&aboutBody=This+is+some+placeholder+text+about+the+person.";
@@ -16,4 +16,4 @@ function MyQRCodeComponent() {
   );
 }
 
-export default MyQRCodeComponent;
+export default QRCodeOne;
