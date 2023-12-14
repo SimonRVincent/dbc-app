@@ -11,7 +11,7 @@ function QRCodeTwo() {
   // http://localhost:3000/?name=John+Doe&position=Developer&email=john.doe%40example.com&phone=1234567890&linkedIn=https%3A%2F%2Flinkedin.com%2Fin%2Fjohndoe&github=https%3A%2F%2Fgithub.com%2Fjohndoe&twitter=https%3A%2F%2Ftwitter.com%2Fjohndoe&aboutTitle=About+John&aboutBody=John+is+a+skilled+developer...
 
   return (
-    <Container className="d-flex justify-content-center align-items-center" style={{ height: '80%' }}>
+    <Container className="d-flex justify-content-center align-items-center">
       <QRCode className="qr-canvas" value={data} size={256} />
     </Container>
   );
