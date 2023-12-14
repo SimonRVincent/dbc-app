@@ -46,7 +46,7 @@ function App() {
 
       <Row
         className="justify-content-center w-100 mt-auto position-absolute"
-        style={{ backgroundColor: "#404040", height: "10%", bottom: 0 }}
+        style={{ backgroundColor: "#404040", height: "5rem", bottom: 0 }}
       ></Row>
     </Container>
   );
