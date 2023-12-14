@@ -10,7 +10,7 @@ function App() {
   const [activeQRCode, setActiveQRCode] = useState(null);
 
   return (
-    <Container fluid className="d-flex flex-column" style={{ height: "100vh" }}>
+    <Container fluid className="d-flex flex-column position-relative" style={{ height: "100vh" }}>
       <Row
         className="justify-content-center w-100"
         style={{ backgroundColor: "#404040" }}
@@ -24,7 +24,10 @@ function App() {
         </Col>
       </Row>
 
-      <div className="flex-grow-1 d-flex justify-content-center">
+      <div
+        className="flex-grow-1 d-flex justify-content-center"
+        style={{ textAlign: "center" }}
+      >
         {!activeQRCode ? (
           <div className="text-center">
             <Button className="m-2" onClick={() => setActiveQRCode(1)}>
@@ -42,12 +45,9 @@ function App() {
       </div>
 
       <Row
-  className="justify-content-center w-100 mt-auto"
-  style={{ backgroundColor: "#404040", height: "10%" }}
->
-  {/* Content of the row */}
-</Row>
-
+        className="justify-content-center w-100 mt-auto position-absolute"
+        style={{ backgroundColor: "#404040", height: "10%", bottom: 0 }}
+      ></Row>
     </Container>
   );
 }
